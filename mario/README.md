@@ -8,7 +8,7 @@ Toward the end of World 1-1 in Nintendo’s Super Mario Bros., Mario must ascend
 
 In a file called `mario.cpp` in the src folder you will implement a program in C++ that recreates the pyramid using hashes (`#`) for bricks as shown below
 
-```txt
+```plaintext
        #
       ##
      ###
@@ -21,7 +21,8 @@ In a file called `mario.cpp` in the src folder you will implement a program in C
 
 But you will prompt the user for an `int` so that you can control the pyramids height. i.e
 
-```txt
+```plaintext
+Enter your desired pyramid height: 3
   #
  ##
 ###
