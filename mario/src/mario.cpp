@@ -1,7 +1,9 @@
+#include "mario.hpp"
 #include <iostream>
 
-int main()
+int get_user_input()
 {
+
     float user_input;
 
     std::cout << "Enter your desired pyramid height: ";
@@ -15,10 +17,19 @@ int main()
         exit(2);
     }
 
-    int pyramid_height = user_input;
+    return user_input;
+}
 
+void print_pyramid(int &user_input)
+{
     for (int i = 1; i < user_input + 1; i++)
     {
         std::cout << std::string(user_input - i, ' ') << std::string(i, '#') << std::endl;
     }
+}
+
+int main()
+{
+    int user_input = get_user_input();
+    print_pyramid(user_input);
 }
