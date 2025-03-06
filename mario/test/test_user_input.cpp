@@ -1,16 +1,21 @@
-#include "gmock/gmock.h"
+#include "InputHandler.hpp"
 #include <gtest/gtest.h>
 #include <sstream>
 
-TEST(USER_IO_TEST, ExampleTest) { EXPECT_EQ(1, 1); }
+namespace {
 
-TEST(USER_IO_TEST, AnotherTest)
+class IOTest : public testing::Test
 {
+protected:
+    IOTest() {}
 
-    // Mock user input and then sus
-    std::string test_input = "1";
-    int expected           = 1;
+    iohandler::InputHandler _io;
+    std::stringstream _input{"5"};
+};
 
-    std::stringstream fake_input(test_input);
-    
-}
+// The actual Tests
+TEST_F(IOTest, test_correct_return) { EXPECT_EQ(5, _io.get_user_input(_input)); }
+
+TEST_F(IOTest, test_incorrect_return) { EXPECT_NE('h', _io.get_user_input(_input)); }
+
+} // namespace

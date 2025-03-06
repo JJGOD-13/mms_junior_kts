@@ -1,5 +1,5 @@
 #pragma once
 
-int get_user_input();
+#include <iostream>
+#include <istream>
 
-void print_pyramid(int &user_input);
