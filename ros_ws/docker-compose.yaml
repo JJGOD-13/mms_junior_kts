@@ -1,0 +1,14 @@
+services:
+  dev:
+    privileged: true
+    image: rosdemo:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: dev
+
+    volumes:
+      # Mount the directory above your current to the ros_ws dir in the container with read-write perms
+      - ..:/ros_ws/:rw
+
+    command: sleep infinity
