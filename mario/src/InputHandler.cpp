@@ -1,5 +1,6 @@
 #include "InputHandler.hpp"
 #include <ios>
+#include <iostream>
 #include <limits>
 
 namespace iohandler {
@@ -11,7 +12,7 @@ int InputHandler::get_user_input(std::istream &input)
 
     float user_input;
 
-    if (!input) { std::cout << "Enter your desired height: "; }
+    if (&input == &std::cin) { std::cout << "Enter your desired height: "; }
     input >> user_input;
 
     // Check input
