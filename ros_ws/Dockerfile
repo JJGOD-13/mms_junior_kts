@@ -3,11 +3,10 @@ FROM --platform=$BUILDPLATFORM ros:jazzy AS dev
 
 SHELL ["/bin/bash", "-c"]
 
-RUN useradd --create-home --uid 100 --shell /bin/bash ros
-RUN echo ros ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/ros
-USER ros
+# RUN useradd --create-home --uid 100 --shell /bin/bash ros
+# RUN echo ros ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/ros
 
-RUN sudo apt-get update && apt-get install -y \
+RUN  apt-get update && apt-get install -y \
     ros-jazzy-demo-nodes-cpp \
     ros-jazzy-foxglove-bridge \
     ros-jazzy-tf2-ros \
@@ -20,8 +19,9 @@ WORKDIR /ros_ws
 
 
 COPY ./init.sh /
+RUN chmod +x /init.sh
 
-RUN echo "source /init.sh" >> /home/ubuntu/.bashrc
+RUN echo "source /init.sh" >> /root/.bashrc
 
 
 
