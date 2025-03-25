@@ -11,6 +11,7 @@ RUN  apt-get update && apt-get install -y \
     ros-jazzy-foxglove-bridge \
     ros-jazzy-tf2-ros \
     clang \
+    clangd \
     colcon 
 
 
