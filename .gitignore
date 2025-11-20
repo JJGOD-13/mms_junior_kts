@@ -1,2 +1,5 @@
 mario/build/*
 mario/.cache
+.cache/
+src/.cache/
+compile_commands.json
