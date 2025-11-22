@@ -1,2 +1,7 @@
 mario/build/*
 mario/.cache
+ros_ws/.cache/clangd/index
+ros_ws/.vscode
+ros_ws/build
+ros_ws/install
+ros_ws/log

@@ -1,18 +1,16 @@
-ARG ROS_DISTRO=jazzy
-FROM --platform=$BUILDPLATFORM ros:jazzy AS dev
+ARG ROS_DISTRO=kilted
+FROM --platform=$BUILDPLATFORM ros:kilted AS dev
 
 SHELL ["/bin/bash", "-c"]
 
-# RUN useradd --create-home --uid 100 --shell /bin/bash ros
-# RUN echo ros ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/ros
 
 RUN  apt-get update && apt-get install -y \
-    ros-jazzy-demo-nodes-cpp \
-    ros-jazzy-foxglove-bridge \
-    ros-jazzy-tf2-ros \
-    clang \
-    clangd \
-    colcon 
+  ros-kilted-demo-nodes-cpp \
+  ros-kilted-foxglove-bridge \
+  ros-kilted-tf2-ros \
+  clang \
+  clangd \
+  colcon 
 
 
 RUN mkdir -p /ros_ws

@@ -1,7 +1,7 @@
 #include <memory>
 
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
 
 class MinimalSubscriber : public rclcpp::Node {
 public:
